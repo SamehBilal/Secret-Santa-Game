@@ -17,8 +17,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/2', function () {
+Route::get('/1', function () {
     return view('welcome2');
+});
+
+Route::get('/2', function () {
+    return view('welcome3');
+});
+
+Route::get('/3', function () {
+    return view('welcome4');
 });
 
 Route::get('/dashboard', function () {
