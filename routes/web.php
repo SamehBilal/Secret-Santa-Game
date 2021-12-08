@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,6 +28,11 @@ Route::get('/2', function () {
 
 Route::get('/3', function () {
     return view('welcome4');
+});
+
+Route::get('/wheel', function () {
+    $users = User::all();
+    return view('wheel',compact('users'));
 });
 
 Route::get('/dashboard', function () {
