@@ -77,15 +77,15 @@
     <script>
         var colors = [
             @foreach($users as $item)
-                @if(!$item->choosed && $item->full_name != Auth::user()->full_name)
+                /* @if(!$item->choosed && $item->full_name != Auth::user()->full_name) */
                         "#FE2354",
-                @endif
+                /* @endif */
             @endforeach ];
         var prizes = [
             @foreach($users as $item)
-                @if(!$item->choosed && $item->full_name != Auth::user()->full_name)
-                        "{{ $item->first_name }}",
-                @endif
+                /* @if(!$item->choosed && $item->full_name != Auth::user()->full_name) */
+                        "{{ $item->last_name }}",
+               /*  @endif */
             @endforeach /*"Rs. 1000 in PB 1", "Multiplier Ticket 1", "Stackup Ticket 1",
     "Rs. 20 in PB 2", "Rs. 1000 in PB 2", "Multiplier Ticket 2", "Stackup Ticket 2","sameh"*/
         ];

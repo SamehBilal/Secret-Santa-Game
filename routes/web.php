@@ -22,9 +22,6 @@ Route::get('/1', function () {
     return view('welcome2');
 });
 
-Route::get('/2', function () {
-    return view('welcome3');
-});
 
 Route::get('/3', function () {
     return view('welcome4');
@@ -36,7 +33,7 @@ Route::get('/wheel', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('profile');
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';

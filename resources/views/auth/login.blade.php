@@ -47,9 +47,21 @@
                     </a>
                 @endif --}}
 
-                <x-button class="ml-3">
+                {{-- <x-button class="ml-3">
                     {{ __('Log in') }}
-                </x-button>
+                </x-button> --}}
+
+                @if (Route::has('login'))
+                    <div class="bg">
+                        <div class="centerer">
+                            @auth
+                                <button type="submit" class="button">Dashboard</button>
+                            @else
+                                <button type="submit" class="button">Log in</button>
+                            @endauth
+                        </div>
+                    </div>
+                @endif
             </div>
         </form>
     </x-auth-card>
