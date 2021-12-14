@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Lacquer&display=swap");
         *,
@@ -45,7 +47,7 @@
         .dropdown {
         display: grid;
         gap: 1em;
-        text-align: center;
+        /* text-align: center; */
         }
 
         label {
@@ -205,17 +207,17 @@
         background: radial-gradient(ellipse at 50% 0%, #cfd8dc 50%, #111 52% 65%, #11111100 70%) 50% 0%/1em 8em, linear-gradient(#111 10%, #11111100 11%) 50% 1em/4.5em 1em, radial-gradient(ellipse at 50% 0%, #cfd8dc 62%, #111 64% 65%, #11111100 67%) 50% 1em/5em 1em, linear-gradient(#111 10%, #11111100 11%) 50% 2.5em/4.5em 1em, radial-gradient(ellipse at 50% 0%, #cfd8dc 62%, #111 64% 65%, #11111100 67%) 50% 2.5em/5em 1em, radial-gradient(ellipse at 50% 100%, #cfd8dc 49%, #cfd8dc00 51%) 1.4em 0/1.25em 4em, radial-gradient(ellipse at 50% 100%, #cfd8dc 49%, #cfd8dc00 51%) calc(100% - 1.4em) 0/1.25em 4em, radial-gradient(ellipse at 50% 100%, #111 75%, #11111100 76%) 50% 0.25em/100% 4.5em;
         }
 
-        select {
+        select,input {
         background-color: #fff;
         border: none;
         width: 100%;
         font: inherit;
         padding: 0em 0.5em;
         }
-        select:focus {
+        select:focus,input:focus,textarea:focus {
         outline: 2px solid transparent;
         }
-        select:focus-visible {
+        select:focus-visible,input:focus-visible,textarea:focus-visible {
         outline: 2px dashed #fff;
         outline-offset: 3px;
         }
@@ -233,35 +235,60 @@
             </div>
         </div>
 
-        <div class="dropdown">
-            <label for="monster-select">Choose your spooky CSS avatar</label>
-            <select name="monster" id="monster-select">
-                <option value="ghost">Ghost</option>
-                <option value="ghoul">Ghoul</option>
-                <option value="marshmallow-monster">Marshmallow Monster</option>
-                <option value="vampire">Vampire</option>
-                <option value="skeleton">Skeleton</option>
-            </select>
-        </div>
-        <input type="color" name="color">
-        <select name="gender" id="">
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-        </select>
-        <select name="category" id="">
-            <option value=""></option>
-        </select>
-        <input type="date" name="date_of_birth">
-        <textarea name="note" id="" cols="30" rows="10"></textarea>
+        <form method="POST" action="{{ route('dashboard.profile',$user->id) }}" enctype="multipart/form-data">
+            @csrf
+            <div class="dropdown">
+                <label for="nickname">Nickname:</label>
+                <input type="text" name="nickname" id="nickname">
+                <label for="monster-select">Avatar:</label>
+                <select name="monster" id="monster-select">
+                    <option value="ghost">Ghost</option>
+                    <option value="ghoul">Ghoul</option>
+                    <option value="marshmallow-monster">Marshmallow Monster</option>
+                    <option value="vampire">Vampire</option>
+                    <option value="skeleton">Skeleton</option>
+                </select>
+                <label for="gender">Gender:</label>
+                <select name="gender" id="gender">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+                <label for="birth_of_date">Date of Birth:</label>
+                <input id="birth_of_date" type="date" name="date_of_birth">
+                <label for="color">Favourite color:</label>
+                <input id="color" type="color" name="color">
+                <label for="category">Present category:</label>
+                <select name="category" id="category">
+                    <option value="Electronics">Electronics</option>
+                </select>
+                <label for="notes">Present Notes:</label>
+                <textarea name="note" id="notes" cols="30" rows="10"></textarea>
+                <input type="submit" value="Submit" style="background: #ff8a65;cursor: pointer;">
+            </div>
+        </form>
     </main>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script>
-        const dropdown = document.querySelector("select");
-        const avatar = document.querySelector(".avatar-container");
+        $("#birth_of_date").flatpickr(
+            {
+                altInput: true,
+                altFormat: "F j, Y",
+                dateFormat: "Y-m-d",
+                maxDate: "today"
+            }
+        );
+    </script>
+
+    <script>
+        const dropdown      = document.querySelector("select");
+        const avatar        = document.querySelector(".avatar-container");
 
         dropdown.addEventListener("change", () => {
-            let currentIndex = getComputedStyle(avatar).getPropertyValue("--Y").trim();
-            let selectedIndex = dropdown.selectedIndex;
-            let indexDiff = Math.abs(selectedIndex - currentIndex);
+            let currentIndex    = getComputedStyle(avatar).getPropertyValue("--Y").trim();
+            let selectedIndex   = dropdown.selectedIndex;
+            let indexDiff       = Math.abs(selectedIndex - currentIndex);
             avatar.style.setProperty("--Y", selectedIndex);
             avatar.style.setProperty("--index-diff", indexDiff);
         });

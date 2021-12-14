@@ -2,6 +2,8 @@
 
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -23,17 +25,22 @@ Route::get('/1', function () {
 });
 
 
-Route::get('/3', function () {
-    return view('welcome4');
-});
-
 Route::get('/wheel', function () {
     $users = User::all();
     return view('wheel',compact('users'));
 });
 
 Route::get('/dashboard', function () {
-    return view('profile');
+    $user = auth()->user();
+    return view('profile',compact('user'));
 })->middleware(['auth'])->name('dashboard');
+
+Route::post('/profile/{id}', function (Request $request) {
+    dd($request->all());
+})->name('dashboard.profile');
+
+Route::get('/result', function () {
+    return view('result');
+})->middleware(['auth'])->name('result');
 
 require __DIR__.'/auth.php';

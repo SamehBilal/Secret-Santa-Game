@@ -9,10 +9,9 @@
         body {
         margin: 0;
         padding: 0;
-        background-image: url({{ asset('img/untitled.jpg') }}), linear-gradient(to bottom, #a3b9d0, #8644db);
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
+        background-color: #171717;
+        background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="36" height="72" viewBox="0 0 36 72"%3E%3Cg fill-rule="evenodd"%3E%3Cg fill="%23b39ddb" fill-opacity="0.05"%3E%3Cpath d="M2 6h12L8 18 2 6zm18 36h12l-6 12-6-12z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+
         height: 100vh;
         }
         img {
@@ -61,13 +60,13 @@
 @endif
 
 @if(Auth::user()->choosed == 1)
-    <h1 id="ans" class="center" style="font-family: 'Langar', cursive;"> {{ Auth::user()->wheel }}</h1>
+    <h1 id="ans" class="center" style="font-family: 'Langar', cursive;color: white;"> {{ Auth::user()->wheel }}</h1>
 @else
     <canvas id="canvas" width="500" height="500" class="center"></canvas>
     <img src="https://massets1.9stacks.com/assets/pwa-icons/spin-the-wheel/spinthewheel_arrow.svg" width="50" height="50" id="arrow">
 
     <img src="{{ asset('img/santa-claus.svg') }}" width="30" height="30" id="center-logo">
-    <h2 id="ans" class="right" style="font-family: 'Langar', cursive;"></h2>
+    <h2 id="ans" class="right" style="font-family: 'Langar', cursive;color: white;"></h2>
     <input type="button" class="right-top" value="spin" style="float:left;" onclick="spin();" />
     <input type="hidden" id="person" value="">
 @endif

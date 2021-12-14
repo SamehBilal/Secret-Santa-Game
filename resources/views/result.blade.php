@@ -473,8 +473,8 @@
             </div>
         </div>
         <div class="card-page cart-page-bottom">
-          <p>Lorem ipsum dolor.<br><br>
-          Sit Amet</p>
+          <p>Your secret santa is:<br><br>
+            Sameh Bilal</p>
         </div>
       </div>
 
