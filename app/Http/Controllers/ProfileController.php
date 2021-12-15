@@ -9,30 +9,39 @@ class ProfileController extends Controller
 {
     public function index()
     {
-        $user = User::find(auth()->user()->id);
-        return view('setup.settings.profile',compact('user'));
+        $user       = User::find(auth()->user()->id);
+        $avatars    = array(
+            'ghost'                 =>'ghost',
+            'ghoul'                 =>'ghoul',
+            'marshmallow-monster'   =>'marshmallow-monster',
+            'vampire'               =>'vampire',
+            'skeleton'              =>'skeleton',
+        );
+        if($user->avatar)
+        {
+            foreach (array_keys($avatars, $user->avatar) as $key) {
+                unset($avatars[$key]);
+            }
+            array_unshift($avatars, $user->avatar);
+        }
+        return view('profile',compact('user','avatars'));
     }
 
     public function update(Request $request, $id)
     {
         $user = User::findOrFail($id);
 
-        $this->validate($request, User::rules($update = true, $user->id));
+        //$this->validate($request, User::rules($update = true, $user->id));
 
         $user->update([
-            'first_name'            => $request->first_name,
-            'last_name'             => $request->last_name,
-            'full_name'             => $request->full_name,
-            'email'                 => $request->email,
-            'other_email'           => $request->other_email,
-            'username'              => $request->username,
+            'nickname'              => $request->nickname,
+            'avatar'                => $request->avatar,
             'password'              => $request->password == '' ? $user->password:$request->password,
             'gender'                => $request->gender,
-            'religion'              => $request->religion,
             'date_of_birth'         => $request->date_of_birth,
-            'phone'                 => $request->phone,
-            'other_phone'           => $request->other_phone,
-            'bio'                   => $request->bio,
+            'color'                 => $request->color,
+            'category'              => $request->category,
+            'note'                  => $request->note,
         ]);
 
         return redirect()->back()->with('success','Data updated successfully');

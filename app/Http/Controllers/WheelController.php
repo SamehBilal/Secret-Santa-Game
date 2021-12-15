@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class WheelController extends Controller
@@ -11,29 +12,36 @@ class WheelController extends Controller
         $this->middleware('auth');
     }
 
+    public function index()
+    {
+        if(\Illuminate\Support\Facades\Auth::user()->user_id != Null)
+        {
+            $user = \App\Models\User::findOrFail(auth()->user()->user_id);
+            return view('result',compact('user'));
+        }else{
+            $users = User::all();
+            return view('wheel',compact('users'));
+        }
+    }
+
     public function wheel(Request $request){
         if ($request->ajax()) {
 
             $value = $request->get('value');
-
-            $id = DB::table('people')->where('name',$value)->value('id');
-            $user = Auth::user()->id;
+            $user = auth()->user()->id;
 
             $form_data = array(
                 'choosed' => 1,
             );
             $form_data1 = array(
-                'choosed' => 1,
-                'wheel' => $value,
+                'user_id' => $value,
             );
 
-            Person::whereId($id)->update($form_data);
+            User::whereId($value)->update($form_data);
             User::whereId($user)->update($form_data1);
 
-            $output =  'hi';//DB::table('users')->where('id',1)->count();
-
             $data = array(
-                'content' => $output,
+                'content' => '',
             );
             echo json_encode($data);
         }

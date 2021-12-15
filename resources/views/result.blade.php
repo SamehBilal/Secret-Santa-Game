@@ -474,7 +474,8 @@
         </div>
         <div class="card-page cart-page-bottom">
           <p>Your secret santa is:<br><br>
-            Sameh Bilal</p>
+              {{ $user->full_name }}
+          </p>
         </div>
       </div>
 

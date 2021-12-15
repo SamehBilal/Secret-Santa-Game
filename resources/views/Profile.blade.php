@@ -72,9 +72,9 @@
         transform: translateY(calc(var(--Y) * var(--avatar-height) * -1));
         }
         @media (prefers-reduced-motion: no-preference) {
-        .avatar-container__inner {
-            transition: calc(0.3s * var(--index-diff)) transform;
-        }
+            .avatar-container__inner {
+                transition: calc(0.3s * var(--index-diff)) transform;
+            }
         }
 
         .avatar {
@@ -207,7 +207,7 @@
         background: radial-gradient(ellipse at 50% 0%, #cfd8dc 50%, #111 52% 65%, #11111100 70%) 50% 0%/1em 8em, linear-gradient(#111 10%, #11111100 11%) 50% 1em/4.5em 1em, radial-gradient(ellipse at 50% 0%, #cfd8dc 62%, #111 64% 65%, #11111100 67%) 50% 1em/5em 1em, linear-gradient(#111 10%, #11111100 11%) 50% 2.5em/4.5em 1em, radial-gradient(ellipse at 50% 0%, #cfd8dc 62%, #111 64% 65%, #11111100 67%) 50% 2.5em/5em 1em, radial-gradient(ellipse at 50% 100%, #cfd8dc 49%, #cfd8dc00 51%) 1.4em 0/1.25em 4em, radial-gradient(ellipse at 50% 100%, #cfd8dc 49%, #cfd8dc00 51%) calc(100% - 1.4em) 0/1.25em 4em, radial-gradient(ellipse at 50% 100%, #111 75%, #11111100 76%) 50% 0.25em/100% 4.5em;
         }
 
-        select,input {
+        select,input,textarea {
         background-color: #fff;
         border: none;
         width: 100%;
@@ -225,44 +225,54 @@
 </head>
 <body>
     <main class="wrapper">
-        <div class="avatar-container">
+        {{--<div class="avatar-container">
             <div class="avatar-container__inner">
-                <div class="ghost avatar"></div>
-                <div class="ghoul avatar"></div>
-                <div class="marshmallow-monster avatar"></div>
-                <div class="vampire avatar"></div>
-                <div class="skeleton avatar"></div>
+                @foreach($avatars as $avatar)
+                    <div class="{{ $avatar }} avatar"></div>
+                @endforeach
             </div>
-        </div>
+        </div>--}}
 
         <form method="POST" action="{{ route('dashboard.profile',$user->id) }}" enctype="multipart/form-data">
             @csrf
             <div class="dropdown">
-                <label for="nickname">Nickname:</label>
-                <input type="text" name="nickname" id="nickname">
+                <div class="avatar-container">
+                    <div class="avatar-container__inner">
+                        @foreach($avatars as $avatar)
+                            <div class="{{ $avatar }} avatar"></div>
+                        @endforeach
+                    </div>
+
+                </div>
                 <label for="monster-select">Avatar:</label>
-                <select name="monster" id="monster-select">
-                    <option value="ghost">Ghost</option>
-                    <option value="ghoul">Ghoul</option>
-                    <option value="marshmallow-monster">Marshmallow Monster</option>
-                    <option value="vampire">Vampire</option>
-                    <option value="skeleton">Skeleton</option>
+                <select name="avatar" id="monster-select">
+                    @foreach($avatars as $avatar)
+                        <option value="{{ $avatar }}" {{ $user->avatar == $avatar ? 'selected':'' }}>{{ $avatar }}</option>
+                    @endforeach
                 </select>
+                <label for="nickname">Nickname:</label>
+                <input type="text" name="nickname" id="nickname" value="{{ $user->nickname }}">
                 <label for="gender">Gender:</label>
                 <select name="gender" id="gender">
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
+                    <option value="Male" {{ $user->gender == 'Male' ? 'selected':'' }}>Male</option>
+                    <option value="Female" {{ $user->gender == 'Female' ? 'selected':'' }}>Female</option>
                 </select>
                 <label for="birth_of_date">Date of Birth:</label>
-                <input id="birth_of_date" type="date" name="date_of_birth">
+                <input id="birth_of_date" type="date" name="date_of_birth" value="{{ $user->date_of_birth }}">
                 <label for="color">Favourite color:</label>
-                <input id="color" type="color" name="color">
+                <input id="color" type="color" name="color" value="{{ $user->color }}">
                 <label for="category">Present category:</label>
                 <select name="category" id="category">
-                    <option value="Electronics">Electronics</option>
+                    <option value="Food and Drinks" {{ $user->category == 'Food and Drinks' ? 'selected':'' }}>Food and Drinks</option>
+                    <option value="Electronics" {{ $user->category == 'Electronics' ? 'selected':'' }}>Electronics</option>
+                    <option value="Electronics" {{ $user->category == 'Electronics' ? 'selected':'' }}>Electronics</option>
+                    <option value="Electronics" {{ $user->category == 'Electronics' ? 'selected':'' }}>Electronics</option>
+                    <option value="Electronics" {{ $user->category == 'Electronics' ? 'selected':'' }}>Electronics</option>
+                    <option value="Electronics" {{ $user->category == 'Electronics' ? 'selected':'' }}>Electronics</option>
+                    <option value="Electronics" {{ $user->category == 'Electronics' ? 'selected':'' }}>Electronics</option>
                 </select>
                 <label for="notes">Present Notes:</label>
-                <textarea name="note" id="notes" cols="30" rows="10"></textarea>
+                <textarea name="note" id="notes" cols="30" rows="10">{{ $user->note }}</textarea>
                 <input type="submit" value="Submit" style="background: #ff8a65;cursor: pointer;">
             </div>
         </form>

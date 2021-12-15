@@ -16,31 +16,19 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/', function () {
-    return view('auth.login');
-});
+Route::get('/', [\App\Http\Controllers\ProfileController::class,'index']);
 
 Route::get('/1', function () {
     return view('welcome2');
 });
 
 
-Route::get('/wheel', function () {
-    $users = User::all();
-    return view('wheel',compact('users'));
-});
+Route::get('/wheel',[\App\Http\Controllers\WheelController::class,'index'])->middleware(['auth'])->name('wheel');
 
-Route::get('/dashboard', function () {
-    $user = auth()->user();
-    return view('profile',compact('user'));
-})->middleware(['auth'])->name('dashboard');
+Route::get('/profile',[\App\Http\Controllers\ProfileController::class,'index'])->middleware(['auth'])->name('dashboard');
 
-Route::post('/profile/{id}', function (Request $request) {
-    dd($request->all());
-})->name('dashboard.profile');
+Route::post('/profile/{id}', [\App\Http\Controllers\ProfileController::class,'update'])->name('dashboard.profile');
 
-Route::get('/result', function () {
-    return view('result');
-})->middleware(['auth'])->name('result');
+Route::get('/wheel-result', [\App\Http\Controllers\WheelController::class,'wheel'])->name('wheel.result');
 
 require __DIR__.'/auth.php';

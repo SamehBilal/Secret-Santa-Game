@@ -5,6 +5,341 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wheel</title>
     <style>
+        @import url("https://fonts.googleapis.com/css?family=Lato:400,100,300,700,100italic,300italic,400italic,700italic,900,900italic");
+        @import url("https://fonts.googleapis.com/css?family=Raleway:400,700");
+
+
+
+        body .btn-bg.Pixar .btn-info {
+            color: #ff8a65;
+        }
+        body .btn-bg.Pixar .btn-mention {
+            color: #ff8a65;
+        }
+        body .btn-bg.Pixar .btn-mention span {
+            color: #ff8a65;
+        }
+        body .btn-bg.Pixar .btn-group .Inside button {
+            color: #ff8a65;
+            border: none;
+            overflow: visible;
+            background: transparent;
+        }
+        body .btn-bg.Pixar .btn-group .Inside button .box1,
+        body .btn-bg.Pixar .btn-group .Inside button .box2 {
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transform-origin: 50% 50%;
+            transition: all 0.25s ease;
+        }
+        body .btn-bg.Pixar .btn-group .Inside button .box1 {
+            width: 100%;
+            height: 50%;
+            top: calc(50% - 25%);
+            border-top: 4px solid #ff8a65;
+            border-bottom: 4px solid #ff8a65;
+        }
+        body .btn-bg.Pixar .btn-group .Inside button .box2 {
+            width: 50%;
+            height: 100%;
+            left: calc(50% - 25%);
+            border-left: 4px solid #ff8a65;
+            border-right: 4px solid #ff8a65;
+        }
+        body .btn-bg.Pixar .btn-group .Inside button:hover .box1 {
+            top: 0;
+            opacity: 1;
+            height: calc(100% - 8px);
+            transition: all 0.25s ease;
+        }
+        body .btn-bg.Pixar .btn-group .Inside button:hover .box2 {
+            left: 0;
+            opacity: 1;
+            width: calc(100% - 8px);
+            transition: all 0.25s ease;
+        }
+        body .btn-bg.Pixar .btn-group .Out button {
+            color: #ff8a65;
+            border: none;
+            overflow: visible;
+            background: transparent;
+        }
+        body .btn-bg.Pixar .btn-group .Out button .box1,
+        body .btn-bg.Pixar .btn-group .Out button .box2 {
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transform-origin: 50% 50%;
+            transition: all 0.25s ease;
+        }
+        body .btn-bg.Pixar .btn-group .Out button .box1 {
+            width: 200%;
+            height: 150%;
+            left: calc(-50%);
+            top: calc(-50% + 25%);
+            border-top: 4px solid #ff8a65;
+            border-bottom: 4px solid #ff8a65;
+        }
+        body .btn-bg.Pixar .btn-group .Out button .box2 {
+            width: 150%;
+            height: 200%;
+            top: calc(-50%);
+            left: calc(-50% + 25%);
+            border-left: 4px solid #ff8a65;
+            border-right: 4px solid #ff8a65;
+        }
+        body .btn-bg.Pixar .btn-group .Out button:hover .box1 {
+            top: 0;
+            left: 0;
+            opacity: 1;
+            width: 100%;
+            height: calc(100% - 8px);
+            transition: all 0.25s ease;
+        }
+        body .btn-bg.Pixar .btn-group .Out button:hover .box2 {
+            top: 0;
+            left: 0;
+            opacity: 1;
+            height: 100%;
+            width: calc(100% - 8px);
+            transition: all 0.25s ease;
+        }
+
+        body .btn-bg.link .btn-group .blog button {
+            color: #fff;
+            overflow: hidden;
+            position: relative;
+            border-radius: 5px;
+            border: 5px solid #fff;
+            padding: calc(1rem + 10px) calc(3rem + 6.5px);
+            background: linear-gradient(45deg, #fff 7.5px, transparent 5px) 0px 10px, linear-gradient(225deg, #fff 7.5px, transparent 5px) 10px 0px, linear-gradient(45deg, #eef 7.5px, transparent 5px) 0px 20px, linear-gradient(225deg, #eef 7.5px, transparent 5px) 10px 10px, linear-gradient(45deg, #dcdde5 7.5px, transparent 5px) 0px 30px, linear-gradient(225deg, #dcdde5 7.5px, transparent 5px) 10px 20px, linear-gradient(90deg, #c9cacc 10px, transparent 10px), linear-gradient(#dcdde5 25%, #c9cacc 25%, #c9cacc 50%, transparent 50%, transparent 75%, #eef 75%, #eef);
+            background-color: transparent;
+            background-size: 0px 0px;
+            transition: all 0.35s ease;
+        }
+        body .btn-bg.link .btn-group .blog button .like {
+            position: absolute;
+            content: '';
+            top: calc(50% - 35px);
+            left: calc(50% - 29.5px);
+            width: 60px;
+            height: 80px;
+            opacity: 0;
+            display: flex;
+            flex-direction: column;
+            transform: scale(0.1);
+            transition: all 0.25s ease;
+        }
+        body .btn-bg.link .btn-group .blog button .like .hand {
+            height: 30px;
+            position: relative;
+        }
+        body .btn-bg.link .btn-group .blog button .like .hand:before,
+        body .btn-bg.link .btn-group .blog button .like .hand:after {
+            width: 20px;
+            height: 30px;
+            background: #ff8a65;
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+        }
+        body .btn-bg.link .btn-group .blog button .like .hand:after {
+            left: inherit;
+            right: 0;
+        }
+        body .btn-bg.link .btn-group .blog button .like .Finger {
+            height: 40px;
+            position: relative;
+        }
+        body .btn-bg.link .btn-group .blog button .like .Finger:before {
+            width: 60px;
+            height: 20px;
+            background: #ff8a65;
+            position: absolute;
+            content: '';
+            bottom: 0;
+            right: 0;
+        }
+        body .btn-bg.link .btn-group .blog button:hover {
+            color: transparent;
+            border-color: transparent;
+            background-color: #fff;
+            background-size: 20px 40px;
+            transition: all 0.35s ease;
+        }
+        body .btn-bg.link .btn-group .blog button:hover .like {
+            transform: scale(0.5);
+            opacity: 1;
+            transition: all 0.25s ease;
+        }
+        body .btn-bg.link .btn-group .codepen button {
+            color: #ff8a65;
+            border-radius: 5px;
+            border: 5px solid #ff8a65;
+            overflow: hidden;
+            position: relative;
+            padding: calc(1rem + 10px) calc(3rem + 6.5px);
+            background: linear-gradient(45deg, #787878 7.5px, transparent 5px) 0px 10px, linear-gradient(225deg, #787878 7.5px, transparent 5px) 10px 0px, linear-gradient(45deg, #565656 7.5px, transparent 5px) 0px 20px, linear-gradient(225deg, #565656 7.5px, transparent 5px) 10px 10px, linear-gradient(45deg, #121212 7.5px, transparent 5px) 0px 30px, linear-gradient(225deg, #121212 7.5px, transparent 5px) 10px 20px, linear-gradient(90deg, #343434 10px, transparent 10px), linear-gradient(#121212 25%, #343434 25%, #343434 50%, transparent 50%, transparent 75%, #565656 75%, #565656);
+            background-color: transparent;
+            background-size: 0px 0px;
+            transition: all 0.35s ease;
+        }
+        body .btn-bg.link .btn-group .codepen button .skeleton {
+            position: absolute;
+            content: url({{ asset('img/logo1.png') }});
+            top: calc(50% - 30px);
+            left: calc(50% - 34px);
+            width: 60px;
+            height: 60px;
+            display: flex;
+            flex-direction: column;
+            transform: scale(0.1);
+            opacity: 0;
+            transition: all 0.25s ease;
+        }
+        body .btn-bg.link .btn-group .codepen button .skeleton .face {
+            height: 20px;
+            width: 70px;
+            position: relative;
+            z-index: 1;
+        }
+        body .btn-bg.link .btn-group .codepen button .skeleton .face:before,
+        body .btn-bg.link .btn-group .codepen button .skeleton .face:after {
+            width: 50px;
+            height: 60px;
+            position: absolute;
+            content: '';
+            background: #fff;
+            top: 0px;
+            left: 10px;
+            z-index: 1;
+        }
+        body .btn-bg.link .btn-group .codepen button .skeleton .face:after {
+            width: 70px;
+            height: 30px;
+            top: 10px;
+            left: 0;
+            right: 0;
+        }
+        body .btn-bg.link .btn-group .codepen button .skeleton .eye {
+            height: 20px;
+            width: 70px;
+            position: relative;
+        }
+        body .btn-bg.link .btn-group .codepen button .skeleton .eye:before,
+        body .btn-bg.link .btn-group .codepen button .skeleton .eye:after {
+            width: 20px;
+            height: 10px;
+            position: absolute;
+            content: '';
+            background: #ff8a65;
+            left: 10px;
+            z-index: 999;
+        }
+        body .btn-bg.link .btn-group .codepen button .skeleton .eye:after {
+            left: inherit;
+            right: 10px;
+        }
+        body .btn-bg.link .btn-group .codepen button .skeleton .mouth {
+            width: 70px;
+            height: 20px;
+            position: relative;
+        }
+        body .btn-bg.link .btn-group .codepen button .skeleton .mouth:before,
+        body .btn-bg.link .btn-group .codepen button .skeleton .mouth:after {
+            position: absolute;
+            content: '';
+            background: #ff8a65;
+            width: 10px;
+            height: 10px;
+            bottom: 0;
+            left: 20px;
+            z-index: 999;
+        }
+        body .btn-bg.link .btn-group .codepen button .skeleton .mouth:after {
+            left: inherit;
+            right: 20px;
+        }
+        body .btn-bg.link .btn-group .codepen button:hover {
+            color: transparent;
+            border-color: transparent;
+            background-color: #ff8a65;
+            background-size: 20px 40px;
+            transition: all 0.35s ease;
+        }
+        body .btn-bg.link .btn-group .codepen button:hover .skeleton {
+            transform: scale(1);
+            opacity: 1;
+            transition: all 0.25s ease;
+        }
+
+        .btn-group {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+        }
+        @media screen and (max-width: 480px) {
+            .btn-group {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+        .btn {
+            margin: 0 30px 30px 30px;
+            display: block;
+        }
+        .btn-info {
+            margin-bottom: 10px;
+            text-align: center;
+            font-family: 'Lato';
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 600;
+            font-size: 3.5em;
+            color: #fff;
+        }
+        .btn-mention {
+            margin-bottom: 70px;
+            text-align: center;
+            font-family: 'Lato';
+            letter-spacing: 0.1em;
+            font-size: 1.1em;
+            color: #fff;
+        }
+        .btn-mention span {
+            font-size: 1.2em;
+            font-weight: 600;
+        }
+        button {
+            cursor: pointer;
+            overflow: visible;
+            outline: none;
+            color: #fff;
+            position: relative;
+            letter-spacing: 0.1em;
+            font-weight: 400;
+            padding: 1rem 3rem 1rem 3rem;
+            text-transform: uppercase;
+            font-family: "Lato";
+            font-size: 1.5em;
+        }
+        button a {
+            text-decoration: none;
+        }
+
+
+    </style>
+    <style>
         @import url('https://fonts.googleapis.com/css2?family=Langar&display=swap');
         body {
         margin: 0;
@@ -53,7 +388,7 @@
             text-decoration: none;
             color: #FFF;
             text-shadow: 0 1px 2px rgba(0,0,0,0.75);
-            background: #F11420;
+            background: #ff8a65;
             outline: none;
             border-radius: 15px;
             border: 1px solid #4c0300;
@@ -115,38 +450,44 @@
     </style>
 </head>
 <body>
-@if (Route::has('login'))
-    <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-        @auth
-            <a href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();"><i class="demo-pli-unlock icon-lg icon-fw"></i> {{ __('Logout') }}</a>
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                @csrf
-            </form>
-        @else
-            <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Login</a>
-
-            @if (Route::has('register'))
-                <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
-            @endif
-        @endauth
+    <div class="btn-bg Pixar">
+        <div class="btn-group">
+            <div class="btn Inside">
+                <button href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                    <div class="box1"></div>
+                    <div class="box2"></div>
+                    {{ __('Logout') }}
+                </button>
+            </div>
+        </div>
     </div>
-@endif
 
-@if(Auth::user()->choosed == 1)
-    <h1 id="ans" class="center" style="font-family: 'Langar', cursive;color: white;"> {{ Auth::user()->wheel }}</h1>
-@else
+
+    <div class="btn-bg link">
+        <div class="btn-group">
+
+            <div class="btn codepen"><a href="#" >
+                    <button onclick="spin();">Spin
+                        <div class="skeleton">
+                            <div class="face"></div>
+                            <div class="eye"></div>
+                            <div class="mouth"></div>
+                        </div>
+                    </button></a></div>
+        </div>
+    </div>
+
+    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+        @csrf
+    </form>
+
+
     <canvas id="canvas" width="500" height="500" class="center"></canvas>
     <img src="https://massets1.9stacks.com/assets/pwa-icons/spin-the-wheel/spinthewheel_arrow.svg" width="50" height="50" id="arrow">
-
     <img src="{{ asset('img/santa-claus.svg') }}" width="30" height="30" id="center-logo">
     <h2 id="ans" class="right" style="font-family: 'Langar', cursive;color: white;"></h2>
-    <button  style="float:left;" onclick="spin();" class="button">Spin</button>https://codepen.io/lichin-lin/pen/kXJWvE
-    {{-- <input type="button" class="right-top" value="spin" style="float:left;" onclick="spin();" /> --}}
     <input type="hidden" id="person" value="">
-@endif
-
-
 
     <script>
         var colors = [
@@ -158,7 +499,7 @@
         var prizes = [
             @foreach($users as $item)
                 /* @if(!$item->choosed && $item->full_name != Auth::user()->full_name) */
-                        "{{ $item->last_name }}",
+                        "{{ $item->id }}",
                /*  @endif */
             @endforeach /*"Rs. 1000 in PB 1", "Multiplier Ticket 1", "Stackup Ticket 1",
     "Rs. 20 in PB 2", "Rs. 1000 in PB 2", "Multiplier Ticket 2", "Stackup Ticket 2","sameh"*/
@@ -280,7 +621,7 @@
         ctx.restore();
         var value = prizes[index];
         $.ajax({
-                url:'{{ url('wheel') }}',
+                url:'{{ route('wheel.result') }}',
                 method:'GET',
                 dataType: 'json',
                 data: {
