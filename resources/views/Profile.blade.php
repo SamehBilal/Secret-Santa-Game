@@ -6,7 +6,357 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Lato:400,100,300,700,100italic,300italic,400italic,700italic,900,900italic");
+        @import url("https://fonts.googleapis.com/css?family=Raleway:400,700");
 
+
+
+        body .btn-bg.Pixar .btn-info {
+            color: #FF8A65;
+        }
+        body .btn-bg.Pixar .btn-mention {
+            color: #FF8A65;
+        }
+        body .btn-bg.Pixar .btn-mention span {
+            color: #FF8A65;
+        }
+        body .btn-bg.Pixar .btn-group .Inside button {
+            color: #FF8A65;
+            border: none;
+            overflow: visible;
+            background: transparent;
+        }
+        body .btn-bg.Pixar .btn-group .Inside button .box1,
+        body .btn-bg.Pixar .btn-group .Inside button .box2 {
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transform-origin: 50% 50%;
+            transition: all 0.25s ease;
+        }
+        body .btn-bg.Pixar .btn-group .Inside button .box1 {
+            width: 100%;
+            height: 50%;
+            top: calc(50% - 25%);
+            border-top: 4px solid #FF8A65;
+            border-bottom: 4px solid #FF8A65;
+        }
+        body .btn-bg.Pixar .btn-group .Inside button .box2 {
+            width: 50%;
+            height: 100%;
+            left: calc(50% - 25%);
+            border-left: 4px solid #FF8A65;
+            border-right: 4px solid #FF8A65;
+        }
+        body .btn-bg.Pixar .btn-group .Inside button:hover .box1 {
+            top: 0;
+            opacity: 1;
+            height: calc(100% - 8px);
+            transition: all 0.25s ease;
+        }
+        body .btn-bg.Pixar .btn-group .Inside button:hover .box2 {
+            left: 0;
+            opacity: 1;
+            width: calc(100% - 8px);
+            transition: all 0.25s ease;
+        }
+        body .btn-bg.Pixar .btn-group .Out button {
+            color: #FF8A65;
+            border: none;
+            overflow: visible;
+            background: transparent;
+        }
+        body .btn-bg.Pixar .btn-group .Out button .box1,
+        body .btn-bg.Pixar .btn-group .Out button .box2 {
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transform-origin: 50% 50%;
+            transition: all 0.25s ease;
+        }
+        body .btn-bg.Pixar .btn-group .Out button .box1 {
+            width: 200%;
+            height: 150%;
+            left: calc(-50%);
+            top: calc(-50% + 25%);
+            border-top: 4px solid #FF8A65;
+            border-bottom: 4px solid #FF8A65;
+        }
+        body .btn-bg.Pixar .btn-group .Out button .box2 {
+            width: 150%;
+            height: 200%;
+            top: calc(-50%);
+            left: calc(-50% + 25%);
+            border-left: 4px solid #FF8A65;
+            border-right: 4px solid #FF8A65;
+        }
+        body .btn-bg.Pixar .btn-group .Out button:hover .box1 {
+            top: 0;
+            left: 0;
+            opacity: 1;
+            width: 100%;
+            height: calc(100% - 8px);
+            transition: all 0.25s ease;
+        }
+        body .btn-bg.Pixar .btn-group .Out button:hover .box2 {
+            top: 0;
+            left: 0;
+            opacity: 1;
+            height: 100%;
+            width: calc(100% - 8px);
+            transition: all 0.25s ease;
+        }
+
+        body .btn-bg.link .btn-group .blog button {
+            color: #FF8A65;
+            overflow: hidden;
+            position: relative;
+            border-radius: 5px;
+            border: 5px solid #FF8A65;
+            padding: calc(1rem + 10px) calc(3rem + 6.5px);
+            background: linear-gradient(45deg, #fff 7.5px, transparent 5px) 0px 10px, linear-gradient(225deg, #fff 7.5px, transparent 5px) 10px 0px, linear-gradient(45deg, #eef 7.5px, transparent 5px) 0px 20px, linear-gradient(225deg, #eef 7.5px, transparent 5px) 10px 10px, linear-gradient(45deg, #dcdde5 7.5px, transparent 5px) 0px 30px, linear-gradient(225deg, #dcdde5 7.5px, transparent 5px) 10px 20px, linear-gradient(90deg, #c9cacc 10px, transparent 10px), linear-gradient(#dcdde5 25%, #c9cacc 25%, #c9cacc 50%, transparent 50%, transparent 75%, #eef 75%, #eef);
+            background-color: transparent;
+            background-size: 0px 0px;
+            transition: all 0.35s ease;
+        }
+        body .btn-bg.link .btn-group .blog button .like {
+            position: absolute;
+            content: '';
+            top: calc(50% - 35px);
+            left: calc(50% - 29.5px);
+            width: 60px;
+            height: 80px;
+            opacity: 0;
+            display: flex;
+            flex-direction: column;
+            transform: scale(0.1);
+            transition: all 0.25s ease;
+        }
+        body .btn-bg.link .btn-group .blog button .like .hand {
+            height: 30px;
+            position: relative;
+        }
+        body .btn-bg.link .btn-group .blog button .like .hand:before,
+        body .btn-bg.link .btn-group .blog button .like .hand:after {
+            width: 20px;
+            height: 30px;
+            background: #FF8A65;
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+        }
+        body .btn-bg.link .btn-group .blog button .like .hand:after {
+            left: inherit;
+            right: 0;
+        }
+        body .btn-bg.link .btn-group .blog button .like .Finger {
+            height: 40px;
+            position: relative;
+        }
+        body .btn-bg.link .btn-group .blog button .like .Finger:before {
+            width: 60px;
+            height: 20px;
+            background: #FF8A65;
+            position: absolute;
+            content: '';
+            bottom: 0;
+            right: 0;
+        }
+        body .btn-bg.link .btn-group .blog button:hover {
+            color: transparent;
+            border-color: transparent;
+            background-color: #FF8A65;
+            background-size: 20px 40px;
+            transition: all 0.35s ease;
+        }
+        body .btn-bg.link .btn-group .blog button:hover .like {
+            transform: scale(0.5);
+            opacity: 1;
+            transition: all 0.25s ease;
+        }
+        body .btn-bg.link .btn-group .codepen button {
+            color: #FF8A65;
+            border-radius: 5px;
+            border: 5px solid #FF8A65;
+            overflow: hidden;
+            position: relative;
+            padding: calc(1rem + 10px) calc(3rem + 6.5px);
+            background: linear-gradient(45deg, #787878 7.5px, transparent 5px) 0px 10px, linear-gradient(225deg, #787878 7.5px, transparent 5px) 10px 0px, linear-gradient(45deg, #565656 7.5px, transparent 5px) 0px 20px, linear-gradient(225deg, #565656 7.5px, transparent 5px) 10px 10px, linear-gradient(45deg, #121212 7.5px, transparent 5px) 0px 30px, linear-gradient(225deg, #121212 7.5px, transparent 5px) 10px 20px, linear-gradient(90deg, #343434 10px, transparent 10px), linear-gradient(#121212 25%, #343434 25%, #343434 50%, transparent 50%, transparent 75%, #565656 75%, #565656);
+            background-color: transparent;
+            background-size: 0px 0px;
+            transition: all 0.35s ease;
+        }
+        body .btn-bg.link .btn-group .codepen button .skeleton {
+            position: absolute;
+            content: url({{ asset('img/logo1.png') }});
+            top: calc(50% - 30px);
+            left: calc(50% - 34px);
+            width: 60px;
+            height: 60px;
+            display: flex;
+            flex-direction: column;
+            transform: scale(0.1);
+            opacity: 0;
+            transition: all 0.25s ease;
+        }
+        body .btn-bg.link .btn-group .codepen button .skeleton .face {
+            height: 20px;
+            width: 70px;
+            position: relative;
+            z-index: 1;
+        }
+        body .btn-bg.link .btn-group .codepen button .skeleton .face:before,
+        body .btn-bg.link .btn-group .codepen button .skeleton .face:after {
+            width: 50px;
+            height: 60px;
+            position: absolute;
+            content: '';
+            background: #FF8A65;
+            top: 0px;
+            left: 10px;
+            z-index: 1;
+        }
+        body .btn-bg.link .btn-group .codepen button .skeleton .face:after {
+            width: 70px;
+            height: 30px;
+            top: 10px;
+            left: 0;
+            right: 0;
+        }
+        body .btn-bg.link .btn-group .codepen button .skeleton .eye {
+            height: 20px;
+            width: 70px;
+            position: relative;
+        }
+        body .btn-bg.link .btn-group .codepen button .skeleton .eye:before,
+        body .btn-bg.link .btn-group .codepen button .skeleton .eye:after {
+            width: 20px;
+            height: 10px;
+            position: absolute;
+            content: '';
+            background: #FF8A65;
+            left: 10px;
+            z-index: 999;
+        }
+        body .btn-bg.link .btn-group .codepen button .skeleton .eye:after {
+            left: inherit;
+            right: 10px;
+        }
+        body .btn-bg.link .btn-group .codepen button .skeleton .mouth {
+            width: 70px;
+            height: 20px;
+            position: relative;
+        }
+        body .btn-bg.link .btn-group .codepen button .skeleton .mouth:before,
+        body .btn-bg.link .btn-group .codepen button .skeleton .mouth:after {
+            position: absolute;
+            content: '';
+            background: #FF8A65;
+            width: 10px;
+            height: 10px;
+            bottom: 0;
+            left: 20px;
+            z-index: 999;
+        }
+        body .btn-bg.link .btn-group .codepen button .skeleton .mouth:after {
+            left: inherit;
+            right: 20px;
+        }
+        body .btn-bg.link .btn-group .codepen button:hover {
+            color: transparent;
+            border-color: transparent;
+            background-color: #FF8A65;
+            background-size: 20px 40px;
+            transition: all 0.35s ease;
+        }
+        body .btn-bg.link .btn-group .codepen button:hover .skeleton {
+            transform: scale(1);
+            opacity: 1;
+            transition: all 0.25s ease;
+        }
+
+        .btn-group {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+        }
+        @media screen and (max-width: 480px) {
+            .btn-group {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+        .btn {
+            margin: 0 30px 30px 30px;
+            display: block;
+        }
+        .btn-info {
+            margin-bottom: 10px;
+            text-align: center;
+            font-family: "Lacquer", cursive;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 600;
+            font-size: 3.5em;
+            color: #fff;
+        }
+        .btn-mention {
+            margin-bottom: 70px;
+            text-align: center;
+            font-family: "Lacquer", cursive;
+            letter-spacing: 0.1em;
+            font-size: 1.1em;
+            color: #fff;
+        }
+        .btn-mention span {
+            font-size: 1.2em;
+            font-weight: 600;
+        }
+        button {
+            cursor: pointer;
+            overflow: visible;
+            outline: none;
+            color: #fff;
+            position: absolute;
+            right: 1em;
+            top: 1em;
+            letter-spacing: 0.1em;
+            font-weight: 400;
+            padding: 1rem 3rem 1rem 3rem;
+            text-transform: uppercase;
+            font-family: "Lacquer", cursive;
+            font-size: 1.2em;
+        }
+        button a {
+            text-decoration: none;
+        }
+
+        #play{
+            cursor: pointer;
+            overflow: visible;
+            outline: none;
+            color: #FF8A65;
+            position: absolute;
+            left: 1em;
+            top: 1em;
+            letter-spacing: 0.1em;
+            font-weight: 400;
+            padding: 1rem 3rem 1rem 3rem;
+            text-transform: uppercase;
+            font-size: 1.2em;
+        }
+
+    </style>
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Lacquer&display=swap");
         *,
@@ -224,6 +574,23 @@
     </style>
 </head>
 <body>
+
+    <div class="btn-bg Pixar">
+        <div class="btn-group">
+            <div class="btn Inside">
+                <button href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                         document.getElementById('logout-form').submit();">
+                    <div class="box1"></div>
+                    <div class="box2"></div>
+                    {{ __('Logout') }}
+                </button>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
+            </div>
+        </div>
+    </div>
+    <a href="{{ route('wheel') }}" id="play">Play</a>
     <main class="wrapper">
         {{--<div class="avatar-container">
             <div class="avatar-container__inner">
@@ -232,7 +599,6 @@
                 @endforeach
             </div>
         </div>--}}
-
         <form method="POST" action="{{ route('dashboard.profile',$user->id) }}" enctype="multipart/form-data">
             @csrf
             <div class="dropdown">
@@ -242,7 +608,6 @@
                             <div class="{{ $avatar }} avatar"></div>
                         @endforeach
                     </div>
-
                 </div>
                 <label for="monster-select">Avatar:</label>
                 <select name="avatar" id="monster-select">

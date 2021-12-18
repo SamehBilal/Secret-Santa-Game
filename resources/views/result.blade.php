@@ -283,7 +283,7 @@
         }
         }
         p {
-        font-family: "Mirza", Verdana, Arial, serif;
+            font-family: "Lacquer", cursive;
         font-size: 36px;
         line-height: 1.2em;
         padding-left: 10px;
@@ -473,8 +473,8 @@
             </div>
         </div>
         <div class="card-page cart-page-bottom">
-          <p>Your secret santa is:<br><br>
-              {{ $user->full_name }}
+          <p>Your secret santa is:<br><br><span style="color: #a61715">{{ $user->full_name }}</span>
+
           </p>
         </div>
       </div>

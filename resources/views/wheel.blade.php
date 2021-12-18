@@ -11,16 +11,16 @@
 
 
         body .btn-bg.Pixar .btn-info {
-            color: #ff8a65;
+            color: #a61715;
         }
         body .btn-bg.Pixar .btn-mention {
-            color: #ff8a65;
+            color: #a61715;
         }
         body .btn-bg.Pixar .btn-mention span {
-            color: #ff8a65;
+            color: #a61715;
         }
         body .btn-bg.Pixar .btn-group .Inside button {
-            color: #ff8a65;
+            color: #a61715;
             border: none;
             overflow: visible;
             background: transparent;
@@ -39,15 +39,15 @@
             width: 100%;
             height: 50%;
             top: calc(50% - 25%);
-            border-top: 4px solid #ff8a65;
-            border-bottom: 4px solid #ff8a65;
+            border-top: 4px solid #a61715;
+            border-bottom: 4px solid #a61715;
         }
         body .btn-bg.Pixar .btn-group .Inside button .box2 {
             width: 50%;
             height: 100%;
             left: calc(50% - 25%);
-            border-left: 4px solid #ff8a65;
-            border-right: 4px solid #ff8a65;
+            border-left: 4px solid #a61715;
+            border-right: 4px solid #a61715;
         }
         body .btn-bg.Pixar .btn-group .Inside button:hover .box1 {
             top: 0;
@@ -62,7 +62,7 @@
             transition: all 0.25s ease;
         }
         body .btn-bg.Pixar .btn-group .Out button {
-            color: #ff8a65;
+            color: #a61715;
             border: none;
             overflow: visible;
             background: transparent;
@@ -82,16 +82,16 @@
             height: 150%;
             left: calc(-50%);
             top: calc(-50% + 25%);
-            border-top: 4px solid #ff8a65;
-            border-bottom: 4px solid #ff8a65;
+            border-top: 4px solid #a61715;
+            border-bottom: 4px solid #a61715;
         }
         body .btn-bg.Pixar .btn-group .Out button .box2 {
             width: 150%;
             height: 200%;
             top: calc(-50%);
             left: calc(-50% + 25%);
-            border-left: 4px solid #ff8a65;
-            border-right: 4px solid #ff8a65;
+            border-left: 4px solid #a61715;
+            border-right: 4px solid #a61715;
         }
         body .btn-bg.Pixar .btn-group .Out button:hover .box1 {
             top: 0;
@@ -111,11 +111,11 @@
         }
 
         body .btn-bg.link .btn-group .blog button {
-            color: #fff;
+            color: #a61715;
             overflow: hidden;
             position: relative;
             border-radius: 5px;
-            border: 5px solid #fff;
+            border: 5px solid #a61715;
             padding: calc(1rem + 10px) calc(3rem + 6.5px);
             background: linear-gradient(45deg, #fff 7.5px, transparent 5px) 0px 10px, linear-gradient(225deg, #fff 7.5px, transparent 5px) 10px 0px, linear-gradient(45deg, #eef 7.5px, transparent 5px) 0px 20px, linear-gradient(225deg, #eef 7.5px, transparent 5px) 10px 10px, linear-gradient(45deg, #dcdde5 7.5px, transparent 5px) 0px 30px, linear-gradient(225deg, #dcdde5 7.5px, transparent 5px) 10px 20px, linear-gradient(90deg, #c9cacc 10px, transparent 10px), linear-gradient(#dcdde5 25%, #c9cacc 25%, #c9cacc 50%, transparent 50%, transparent 75%, #eef 75%, #eef);
             background-color: transparent;
@@ -143,7 +143,7 @@
         body .btn-bg.link .btn-group .blog button .like .hand:after {
             width: 20px;
             height: 30px;
-            background: #ff8a65;
+            background: #a61715;
             position: absolute;
             content: '';
             top: 0;
@@ -160,7 +160,7 @@
         body .btn-bg.link .btn-group .blog button .like .Finger:before {
             width: 60px;
             height: 20px;
-            background: #ff8a65;
+            background: #a61715;
             position: absolute;
             content: '';
             bottom: 0;
@@ -169,7 +169,7 @@
         body .btn-bg.link .btn-group .blog button:hover {
             color: transparent;
             border-color: transparent;
-            background-color: #fff;
+            background-color: #a61715;
             background-size: 20px 40px;
             transition: all 0.35s ease;
         }
@@ -179,9 +179,9 @@
             transition: all 0.25s ease;
         }
         body .btn-bg.link .btn-group .codepen button {
-            color: #ff8a65;
+            color: #a61715;
             border-radius: 5px;
-            border: 5px solid #ff8a65;
+            border: 5px solid #a61715;
             overflow: hidden;
             position: relative;
             padding: calc(1rem + 10px) calc(3rem + 6.5px);
@@ -215,7 +215,7 @@
             height: 60px;
             position: absolute;
             content: '';
-            background: #fff;
+            background: #a61715;
             top: 0px;
             left: 10px;
             z-index: 1;
@@ -238,7 +238,7 @@
             height: 10px;
             position: absolute;
             content: '';
-            background: #ff8a65;
+            background: #a61715;
             left: 10px;
             z-index: 999;
         }
@@ -255,7 +255,7 @@
         body .btn-bg.link .btn-group .codepen button .skeleton .mouth:after {
             position: absolute;
             content: '';
-            background: #ff8a65;
+            background: #a61715;
             width: 10px;
             height: 10px;
             bottom: 0;
@@ -269,7 +269,7 @@
         body .btn-bg.link .btn-group .codepen button:hover {
             color: transparent;
             border-color: transparent;
-            background-color: #ff8a65;
+            background-color: #a61715;
             background-size: 20px 40px;
             transition: all 0.35s ease;
         }
@@ -301,7 +301,7 @@
         .btn-info {
             margin-bottom: 10px;
             text-align: center;
-            font-family: 'Lato';
+            font-family: "Lacquer", cursive;
             text-transform: uppercase;
             letter-spacing: 0.1em;
             font-weight: 600;
@@ -311,7 +311,7 @@
         .btn-mention {
             margin-bottom: 70px;
             text-align: center;
-            font-family: 'Lato';
+            font-family: "Lacquer", cursive;
             letter-spacing: 0.1em;
             font-size: 1.1em;
             color: #fff;
@@ -325,13 +325,15 @@
             overflow: visible;
             outline: none;
             color: #fff;
-            position: relative;
+            position: absolute;
+            right: 1em;
+            top: 1em;
             letter-spacing: 0.1em;
             font-weight: 400;
             padding: 1rem 3rem 1rem 3rem;
             text-transform: uppercase;
-            font-family: "Lato";
-            font-size: 1.5em;
+            font-family: "Lacquer", cursive;
+            font-size: 1.2em;
         }
         button a {
             text-decoration: none;
@@ -346,33 +348,33 @@
         padding: 0;
         background-color: #171717;
         background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="36" height="72" viewBox="0 0 36 72"%3E%3Cg fill-rule="evenodd"%3E%3Cg fill="%23b39ddb" fill-opacity="0.05"%3E%3Cpath d="M2 6h12L8 18 2 6zm18 36h12l-6 12-6-12z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
-
+        display: flex;
+        justify-content: center;
+        align-items: center;
         height: 100vh;
+            flex-wrap: wrap;
+            gap: 1.5em;
         }
-        img {
+        img,#ans {
         display: none;
         }
-        .center {
+
+        #play{
+            cursor: pointer;
+            overflow: visible;
+            outline: none;
+            color: #a61715;
             position: absolute;
-            left: 35%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            padding: 10px;
-            }
-        .right {
-            position: absolute;
-            left: 70%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            padding: 10px;
-            }
-            .right-top {
-            position: absolute;
-            left: 70%;
-            top: 45%;
-            transform: translate(-50%, -50%);
-            padding: 10px;
-            }
+            left: 1em;
+            top: 1em;
+            letter-spacing: 0.1em;
+            font-weight: 400;
+            padding: 1rem 3rem 1rem 3rem;
+            text-transform: uppercase;
+            font-size: 1.2em;
+            font-family: "Lacquer", cursive;
+        }
+
     </style>
     <style>
         .button {
@@ -382,13 +384,13 @@
                     box-sizing:border-box;
             min-width:100px;
             padding: 22px 33px;
-            font-family: 'Lobster', cursive;
+            font-family: "Lacquer", cursive;
             font-size: 26px;
             line-height: 26px;
             text-decoration: none;
             color: #FFF;
             text-shadow: 0 1px 2px rgba(0,0,0,0.75);
-            background: #ff8a65;
+            background: #a61715;
             outline: none;
             border-radius: 15px;
             border: 1px solid #4c0300;
@@ -450,6 +452,8 @@
     </style>
 </head>
 <body>
+    <a href="{{ route('dashboard') }}" id="play">Profile</a>
+
     <div class="btn-bg Pixar">
         <div class="btn-group">
             <div class="btn Inside">
@@ -463,27 +467,14 @@
         </div>
     </div>
 
-
-    <div class="btn-bg link">
-        <div class="btn-group">
-
-            <div class="btn codepen"><a href="#" >
-                    <button onclick="spin();">Spin
-                        <div class="skeleton">
-                            <div class="face"></div>
-                            <div class="eye"></div>
-                            <div class="mouth"></div>
-                        </div>
-                    </button></a></div>
-        </div>
-    </div>
-
     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
         @csrf
     </form>
 
-
     <canvas id="canvas" width="500" height="500" class="center"></canvas>
+    <button class="button right-top" onclick="spin();">ON</button>
+
+
     <img src="https://massets1.9stacks.com/assets/pwa-icons/spin-the-wheel/spinthewheel_arrow.svg" width="50" height="50" id="arrow">
     <img src="{{ asset('img/santa-claus.svg') }}" width="30" height="30" id="center-logo">
     <h2 id="ans" class="right" style="font-family: 'Langar', cursive;color: white;"></h2>
@@ -492,13 +483,13 @@
     <script>
         var colors = [
             @foreach($users as $item)
-                /* @if(!$item->choosed && $item->full_name != Auth::user()->full_name) */
-                        "#FE2354",
+                /* @if(!$item->choosed && $item->email != Auth::user()->email) */
+                        "{{ $item->color }}",
                 /* @endif */
             @endforeach ];
         var prizes = [
             @foreach($users as $item)
-                /* @if(!$item->choosed && $item->full_name != Auth::user()->full_name) */
+                /* @if(!$item->choosed && $item->email != Auth::user()->email) */
                         "{{ $item->id }}",
                /*  @endif */
             @endforeach /*"Rs. 1000 in PB 1", "Multiplier Ticket 1", "Stackup Ticket 1",
@@ -528,14 +519,14 @@
             var angle = startAngle + i * arc;
             ctx.beginPath();
             ctx.strokeStyle = "#544149";
-            ctx.lineWidth = 16;
+            ctx.lineWidth = 12;
             ctx.arc(250, 250, 200, angle, angle + arc, false);
             ctx.stroke();
             ctx.fillStyle = colors[i];
             ctx.beginPath();
             ctx.arc(250, 250, outsideRadius, angle, angle + arc, false);
             ctx.strokeStyle = '#544149';
-            ctx.lineWidth = 8;
+            ctx.lineWidth = 6;
             ctx.lineTo(250, 250);
             if ( i === colors.length - 1) {
                 ctx.beginPath();
@@ -647,7 +638,6 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-<script>
-</script>
+
 </body>
 </html>

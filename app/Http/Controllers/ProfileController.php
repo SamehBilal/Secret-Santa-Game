@@ -4,27 +4,33 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
 {
     public function index()
     {
-        $user       = User::find(auth()->user()->id);
-        $avatars    = array(
-            'ghost'                 =>'ghost',
-            'ghoul'                 =>'ghoul',
-            'marshmallow-monster'   =>'marshmallow-monster',
-            'vampire'               =>'vampire',
-            'skeleton'              =>'skeleton',
-        );
-        if($user->avatar)
-        {
-            foreach (array_keys($avatars, $user->avatar) as $key) {
-                unset($avatars[$key]);
+        if (Auth::check()) {
+            $user       = User::find(auth()->user()->id);
+            $avatars    = array(
+                'ghost'                 =>'ghost',
+                'ghoul'                 =>'ghoul',
+                'marshmallow-monster'   =>'marshmallow-monster',
+                'vampire'               =>'vampire',
+                'skeleton'              =>'skeleton',
+            );
+            if($user->avatar)
+            {
+                foreach (array_keys($avatars, $user->avatar) as $key) {
+                    unset($avatars[$key]);
+                }
+                array_unshift($avatars, $user->avatar);
             }
-            array_unshift($avatars, $user->avatar);
+            return view('profile',compact('user','avatars'));
+        }else{
+            return redirect('login');
         }
-        return view('profile',compact('user','avatars'));
+
     }
 
     public function update(Request $request, $id)
