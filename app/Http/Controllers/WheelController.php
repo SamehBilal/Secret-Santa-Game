@@ -31,11 +31,15 @@ class WheelController extends Controller
             $user = auth()->user()->id;
 
             $form_data = array(
-                'choosed' => 1,
                 'user_id' => $value,
             );
 
+            $form_data1 = array(
+                'choosed' => 1,
+            );
+
             User::whereId($user)->update($form_data);
+            User::whereId($value)->update($form_data1);
 
             $data = array(
                 'content' => '',

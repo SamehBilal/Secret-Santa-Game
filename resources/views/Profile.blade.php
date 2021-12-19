@@ -590,7 +590,7 @@
             </div>
         </div>
     </div>
-    <a href="{{ route('wheel') }}" id="play">Play</a>
+    <a href="{{ route('wheel') }}" title="Soon" id="play">{{ auth()->user()->user_id != Null ? 'Result':'Play' }}</a>
     <main class="wrapper">
         {{--<div class="avatar-container">
             <div class="avatar-container__inner">
