@@ -616,7 +616,13 @@
                     @endforeach
                 </select>
                 <label for="nickname">Nickname:</label>
-                <input type="text" name="nickname" id="nickname" value="{{ $user->nickname }}">
+                <input type="text" name="nickname" id="nickname" value="{{ $user->nickname }}" autocomplete="off">
+                @if($user->password == '$2y$10$/JdOgonPDPTcGCUegmXzz.HWWZ3NKi/IUhsqmIKPIrZO6Z7yMjb5G')
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" id="password" autocomplete="off">
+                    <label for="password_confirmation">Confirm Password:</label>
+                    <input type="password" name="password_confirmation" id="password_confirmation" >
+                @endif
                 <label for="gender">Gender:</label>
                 <select name="gender" id="gender">
                     <option value="Male" {{ $user->gender == 'Male' ? 'selected':'' }}>Male</option>

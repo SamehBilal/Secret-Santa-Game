@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class ProfileController extends Controller
 {
@@ -42,7 +43,7 @@ class ProfileController extends Controller
         $user->update([
             'nickname'              => $request->nickname,
             'avatar'                => $request->avatar,
-            'password'              => $request->password == '' ? $user->password:$request->password,
+            'password'              => $request->password == '' ? $user->password: Hash::make($request->password),
             'gender'                => $request->gender,
             'date_of_birth'         => $request->date_of_birth,
             'color'                 => $request->color,
