@@ -609,20 +609,10 @@
                         @endforeach
                     </div>
                 </div>
-                <label for="monster-select">Avatar:</label>
-                <select name="avatar" id="monster-select">
-                    @foreach($avatars as $avatar)
-                        <option value="{{ $avatar }}" {{ $user->avatar == $avatar ? 'selected':'' }}>{{ $avatar }}</option>
-                    @endforeach
-                </select>
+                <label for="monster-select">Name:</label>
+                <input type="text" name="nickname" id="monster-select" value="{{ $user->full_name }}" autocomplete="off">
                 <label for="nickname">Nickname:</label>
                 <input type="text" name="nickname" id="nickname" value="{{ $user->nickname }}" autocomplete="off">
-                @if($user->password == '$2y$10$/JdOgonPDPTcGCUegmXzz.HWWZ3NKi/IUhsqmIKPIrZO6Z7yMjb5G')
-                    <label for="password">Password:</label>
-                    <input type="password" name="password" id="password" autocomplete="off">
-                    <label for="password_confirmation">Confirm Password:</label>
-                    <input type="password" name="password_confirmation" id="password_confirmation" >
-                @endif
                 <label for="gender">Gender:</label>
                 <select name="gender" id="gender">
                     <option value="Male" {{ $user->gender == 'Male' ? 'selected':'' }}>Male</option>
@@ -647,7 +637,7 @@
                 </select>
                 <label for="notes">Present Notes:</label>
                 <textarea name="note" id="notes" cols="30" rows="10">{{ $user->note }}</textarea>
-                <input type="submit" value="Submit" style="background: #ff8a65;cursor: pointer;">
+                {{-- <input type="submit" value="Submit" style="background: #ff8a65;cursor: pointer;"> --}}
             </div>
         </form>
     </main>

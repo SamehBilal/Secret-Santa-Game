@@ -475,7 +475,7 @@
     <button class="button right-top" onclick="spin();">ON</button>
 
 
-    <img src="https://massets1.9stacks.com/assets/pwa-icons/spin-the-wheel/spinthewheel_arrow.svg" width="50" height="50" id="arrow">
+    <img src="{{ asset('img/spinthewheel_arrow.svg') }}" width="50" height="50" id="arrow">
     <img src="{{ asset('img/santa-claus.svg') }}" width="30" height="30" id="center-logo">
     <h2 id="ans" class="right" style="font-family: 'Langar', cursive;color: white;"></h2>
     <input type="hidden" id="person" value="">
@@ -491,7 +491,7 @@
             @foreach($users as $item)
                  @if(!$item->choosed && $item->email != Auth::user()->email)
                         "{{ $item->id }}",
-                 @endif 
+                 @endif
             @endforeach /*"Rs. 1000 in PB 1", "Multiplier Ticket 1", "Stackup Ticket 1",
     "Rs. 20 in PB 2", "Rs. 1000 in PB 2", "Multiplier Ticket 2", "Stackup Ticket 2","sameh"*/
         ];

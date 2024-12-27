@@ -34,6 +34,31 @@ class ProfileController extends Controller
 
     }
 
+    public function result($id)
+    {
+        if (Auth::check()) {
+            $user       = User::find($id);
+            $avatars    = array(
+                'ghost'                 =>'ghost',
+                'ghoul'                 =>'ghoul',
+                'marshmallow-monster'   =>'marshmallow-monster',
+                'vampire'               =>'vampire',
+                'skeleton'              =>'skeleton',
+            );
+            if($user->avatar)
+            {
+                foreach (array_keys($avatars, $user->avatar) as $key) {
+                    unset($avatars[$key]);
+                }
+                array_unshift($avatars, $user->avatar);
+            }
+            return view('result-profile',compact('user','avatars'));
+        }else{
+            return redirect('login');
+        }
+
+    }
+
     public function update(Request $request, $id)
     {
         $user = User::findOrFail($id);
