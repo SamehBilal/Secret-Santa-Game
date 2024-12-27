@@ -57,6 +57,25 @@ class UserSeeder extends Seeder
             ['first_name' => 'Ibrahim',     'last_name' => 'Hamdy',         'full_name' => 'Ibrahim Hamdy',                                 'email' => 'ibrahim@arabhardware.net' ,     'password' => '$2y$10$/JdOgonPDPTcGCUegmXzz.HWWZ3NKi/IUhsqmIKPIrZO6Z7yMjb5G','created_at' => now()],
         ];
 
+        $users = [
+            ['first_name' => 'Sameh',       'last_name' => 'Bilal',        'full_name' => 'Sameh Bilal',         'email' => 'sbilal@arabhardware.net',    'password' => '$2y$10$Tz8KW1vWlv6yyyBSFNnZLup0H3om2N24BvAR29sGSeQT5XmX8MbFK', 'created_at' => now()],
+            ['first_name' => 'Ahmed',       'last_name' => 'Fathy',        'full_name' => 'Ahmed Fathy',         'email' => 'afathy@arabhardware.net',    'password' => '$2y$10$Tz8KW1vWlv6yyyBSFNnZLup0H3om2N24BvAR29sGSeQT5XmX8MbFK', 'created_at' => now()],
+            ['first_name' => 'Marina',      'last_name' => 'Mekhael',      'full_name' => 'Marina Mekhael',      'email' => 'mmekhael@arabhardware.net',  'password' => '$2y$10$Tz8KW1vWlv6yyyBSFNnZLup0H3om2N24BvAR29sGSeQT5XmX8MbFK', 'created_at' => now()],
+            ['first_name' => 'Rasha',       'last_name' => 'Abdelaziz',    'full_name' => 'Rasha Abdelaziz',     'email' => 'RAbdelaziz@arabhardware.net','password' => '$2y$10$Tz8KW1vWlv6yyyBSFNnZLup0H3om2N24BvAR29sGSeQT5XmX8MbFK', 'created_at' => now()],
+            ['first_name' => 'Mohab',       'last_name' => 'Samir',        'full_name' => 'Mohab Samir',         'email' => 'msamir@arabhardware.net',    'password' => '$2y$10$Tz8KW1vWlv6yyyBSFNnZLup0H3om2N24BvAR29sGSeQT5XmX8MbFK', 'created_at' => now()],
+            ['first_name' => 'Aya',         'last_name' => 'A7mos',        'full_name' => 'Aya A7mos',           'email' => 'aelahmous@arabhardware.net', 'password' => '$2y$10$Tz8KW1vWlv6yyyBSFNnZLup0H3om2N24BvAR29sGSeQT5XmX8MbFK', 'created_at' => now()],
+            ['first_name' => 'Taiseer',     'last_name' => 'Yehia',        'full_name' => 'Taiseer Yehia',       'email' => 'tyehia@arabhardware.net',    'password' => '$2y$10$Tz8KW1vWlv6yyyBSFNnZLup0H3om2N24BvAR29sGSeQT5XmX8MbFK', 'created_at' => now()],
+            ['first_name' => 'Ahmed',       'last_name' => 'Sayegh',       'full_name' => 'Ahmed Sayegh',        'email' => 'aelsayegh@arabhardware.net', 'password' => '$2y$10$Tz8KW1vWlv6yyyBSFNnZLup0H3om2N24BvAR29sGSeQT5XmX8MbFK', 'created_at' => now()],
+            ['first_name' => 'Mostafa',     'last_name' => 'Yousry',       'full_name' => 'Mostafa Yousry',      'email' => 'myousry@arabhardware.net',   'password' => '$2y$10$Tz8KW1vWlv6yyyBSFNnZLup0H3om2N24BvAR29sGSeQT5XmX8MbFK', 'created_at' => now()],
+            ['first_name' => 'Mega',        'last_name' => 'Ashraf',       'full_name' => 'Mega Ashraf',         'email' => 'sashraf@arabhardware.net',   'password' => '$2y$10$Tz8KW1vWlv6yyyBSFNnZLup0H3om2N24BvAR29sGSeQT5XmX8MbFK', 'created_at' => now()],
+            ['first_name' => 'Ghadeer',     'last_name' => 'Tarek',        'full_name' => 'Ghadeer Tarek',       'email' => 'gtarek@arabhardware.net',    'password' => '$2y$10$Tz8KW1vWlv6yyyBSFNnZLup0H3om2N24BvAR29sGSeQT5XmX8MbFK', 'created_at' => now()],
+            ['first_name' => 'Mohamed',     'last_name' => 'Hussin',       'full_name' => 'Mohamed Hussin',      'email' => 'mhuseen@arabhardware.net',   'password' => '$2y$10$Tz8KW1vWlv6yyyBSFNnZLup0H3om2N24BvAR29sGSeQT5XmX8MbFK', 'created_at' => now()],
+            ['first_name' => 'Ahmed',       'last_name' => 'Zakaria',      'full_name' => 'Ahmed Zakaria',       'email' => 'azakaria@arabhardware.net',  'password' => '$2y$10$Tz8KW1vWlv6yyyBSFNnZLup0H3om2N24BvAR29sGSeQT5XmX8MbFK', 'created_at' => now()],
+            ['first_name' => 'Mahmoud',     'last_name' => 'Walid',        'full_name' => 'Mahmoud Walid',       'email' => 'mwalid@arabhardware.net',    'password' => '$2y$10$Tz8KW1vWlv6yyyBSFNnZLup0H3om2N24BvAR29sGSeQT5XmX8MbFK', 'created_at' => now()],
+            ['first_name' => 'Marwan',      'last_name' => 'Khaled',       'full_name' => 'Marwan Khaled',       'email' => 'mkhaled@arabhardware.net',   'password' => '$2y$10$Tz8KW1vWlv6yyyBSFNnZLup0H3om2N24BvAR29sGSeQT5XmX8MbFK', 'created_at' => now()],
+        ];
+s
+
         \Illuminate\Support\Facades\DB::table('users')->insert($users);
     }
 }
