@@ -27,6 +27,8 @@ Route::get('/wheel',[\App\Http\Controllers\WheelController::class,'index'])->mid
 
 Route::get('/profile',[\App\Http\Controllers\ProfileController::class,'index'])->middleware(['auth'])->name('dashboard');
 
+Route::get('/result/{id}',[\App\Http\Controllers\ProfileController::class,'result'])->middleware(['auth'])->name('result');
+
 Route::post('/profile/{id}', [\App\Http\Controllers\ProfileController::class,'update'])->name('dashboard.profile');
 
 Route::get('/wheel-result', [\App\Http\Controllers\WheelController::class,'wheel'])->name('wheel.result');

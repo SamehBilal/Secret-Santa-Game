@@ -53,7 +53,7 @@ class UserSeeder extends Seeder
             ['first_name' => 'Adham',       'last_name' => 'Hamed',         'full_name' => 'Adham Mohamed Hamed',                           'email' => 'ahamed@arabhardware.net' ,      'password' => '$2y$10$/JdOgonPDPTcGCUegmXzz.HWWZ3NKi/IUhsqmIKPIrZO6Z7yMjb5G','created_at' => now()],
             ['first_name' => 'Ahmed',       'last_name' => 'Fathy',         'full_name' => 'Ahmed Fathy Abdel Aal',                         'email' => 'afathy@arabhardware.net' ,      'password' => '$2y$10$/JdOgonPDPTcGCUegmXzz.HWWZ3NKi/IUhsqmIKPIrZO6Z7yMjb5G','created_at' => now()],
             ['first_name' => 'Hazem',       'last_name' => 'Salah',         'full_name' => 'Hazem Adel Salah',                              'email' => 'hadel@arabhardware.net' ,       'password' => '$2y$10$/JdOgonPDPTcGCUegmXzz.HWWZ3NKi/IUhsqmIKPIrZO6Z7yMjb5G','created_at' => now()],
-            ['first_name' => 'Sameh',       'last_name' => 'Bilal',         'full_name' => 'Sameh Ramadan Bilal',                           'email' => 'sbilal@arabhardware.net' ,      'password' => '$2y$10$/JdOgonPDPTcGCUegmXzz.HWWZ3NKi/IUhsqmIKPIrZO6Z7yMjb5G','created_at' => now()],
+            ['first_name' => 'Sameh',       'last_name' => 'Bilal',         'full_name' => 'Sameh Ramadan Bilal',                           'email' => 'sbilal@arabhardware.net' ,      'password' => '$2y$10$Tz8KW1vWlv6yyyBSFNnZLup0H3om2N24BvAR29sGSeQT5XmX8MbFK','created_at' => now()],
             ['first_name' => 'Ibrahim',     'last_name' => 'Hamdy',         'full_name' => 'Ibrahim Hamdy',                                 'email' => 'ibrahim@arabhardware.net' ,     'password' => '$2y$10$/JdOgonPDPTcGCUegmXzz.HWWZ3NKi/IUhsqmIKPIrZO6Z7yMjb5G','created_at' => now()],
         ];
 
