@@ -473,7 +473,7 @@
             </div>
         </div>
         <div class="card-page cart-page-bottom">
-          <p>Your secret santa is:<br><br><span id="span" style="color: #a61715"><a href="{{ route('result',$user->id) }}">{{ $user->full_name }}</a> {{-- <br>  <small style="color: #000">{{ $user->category }}</small> --}}</span>
+          <p>Your secret santa is:<br><br><span id="span" style="color: #a61715">{{ $user->full_name }} <br>  <a href="{{ route('result',$user->id) }}"><small style="color: #000">See {{ $user->first_name }}'s  profile</small></a></span>
 
           </p>
         </div>

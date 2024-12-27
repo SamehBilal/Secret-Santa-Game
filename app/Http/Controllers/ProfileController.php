@@ -66,6 +66,7 @@ class ProfileController extends Controller
         //$this->validate($request, User::rules($update = true, $user->id));
 
         $user->update([
+            'full_name'             => $request->full_name == '' ? $user->full_name:$request->full_name,
             'nickname'              => $request->nickname,
             'avatar'                => $request->avatar,
             'password'              => $request->password == '' ? $user->password: Hash::make($request->password),
