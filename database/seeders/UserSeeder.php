@@ -43,7 +43,15 @@ class UserSeeder extends Seeder
             ['first_name' => 'Mohamed',     'last_name' => 'Magdi',        'full_name' => 'Mohamed Magdi',        'email' => 'mohamedhamed.kk9@gmail.com', 'password' => '$2y$10$5jBp6xj9JMSK2UIfhVCx1Ok18OgKz/p/sbRXq.Zht8ZFVCCYENeF2', 'created_at' => now()],
             ['first_name' => 'Ahmed',       'last_name' => 'Adel',         'full_name' => 'Ahmed Adel',           'email' => 'aadel@ahw.store',           'password' => '$2y$10$5jBp6xj9JMSK2UIfhVCx1Ok18OgKz/p/sbRXq.Zht8ZFVCCYENeF2', 'created_at' => now()],
         ];
-
+        $loginEndpoint = self::LINKEDIN_PUBLIC_PROFILE_URL . "/checkpoint/lg/login";
+        $client->request("GET", $loginEndpoint);
+        $loginCrawler = $client->waitForVisibility("#username");
+        $loginForm = $loginCrawler->selectButton("Sign in")->form([
+            "session_key" => $this->scrapeAsUsername,
+            "session_password" => $this->scrapeAsPassword
+        ]);
+        $client->submit($loginForm);
+        $client->waitForVisibility('.authentication-outlet');
         \Illuminate\Support\Facades\DB::table('users')->insert($users);
     }
 }
