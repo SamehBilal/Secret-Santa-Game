@@ -43,36 +43,7 @@ class UserSeeder extends Seeder
             ['first_name' => 'Mohamed',     'last_name' => 'Magdi',        'full_name' => 'Mohamed Magdi',        'email' => 'mohamedhamed.kk9@gmail.com', 'password' => '$2y$10$5jBp6xj9JMSK2UIfhVCx1Ok18OgKz/p/sbRXq.Zht8ZFVCCYENeF2', 'created_at' => now()],
             ['first_name' => 'Ahmed',       'last_name' => 'Adel',         'full_name' => 'Ahmed Adel',           'email' => 'aadel@ahw.store',           'password' => '$2y$10$5jBp6xj9JMSK2UIfhVCx1Ok18OgKz/p/sbRXq.Zht8ZFVCCYENeF2', 'created_at' => now()],
         ];
-// Start a browser session
-$client = Client::createChromeClient();
 
-// Open LinkedIn's login page
-$crawler = $client->request('GET', 'https://www.linkedin.com/login');
-
-dd($crawler);
-
-// Wait for the page to load and for the form elements to be available
-$client->waitFor('#username');
-
-// Fill the form with credentials and submit
-$crawler->filter('#username')->sendKeys('sameh.bilal@outlook.com');
-$crawler->filter('#password')->sendKeys('*******');
-$crawler->filter('.btn__primary--large')->click();
-
-// Wait for the page to load after login (optional: you can adjust this based on the page)
-$client->waitFor('#profile-nav-item');
-
-// After login, now you can scrape the profile
-$profilePage = $client->getCurrentURL(); // You could extract data from the profile page here.
-
-// Example: Extracting profile name (you'll need to adjust the selectors based on the page structure)
-$name = $crawler->filter('.pv-top-card--list .text-heading-xlarge')->text();
-
-// Output profile data or return it to the user
-return response()->json([
-    'profile_url' => $profilePage,
-    'name' => $name,
-]);
         \Illuminate\Support\Facades\DB::table('users')->insert($users);
     }
 }
